@@ -1,16 +1,30 @@
-Title: Musicify - React & Redux Music Player
+# React + TypeScript + Vite
 
-Description:
-Musicify is a demonstration of a music player application built using TypeScript, React, and Redux for state management. This project showcases the implementation of various features including song lyrics display, play/pause functionality, navigation controls for next and previous songs, loop functionality, and engaging animations.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Features:
+Currently, two official plugins are available:
 
-1.Lyrics Display: View lyrics of the currently playing song.
-2.Play/Pause Control: Play or pause the currently selected song.
-3.Next/Previous Navigation: Navigate between songs with next and previous controls.
-4.Loop Functionality: Loop the currently playing song for continuous playback.
-5.Global State Management: Utilizes Redux for managing global application state efficiently.
-6.Engaging Animations: Incorporates animations for a visually appealing user experience.
-7.Responsive Design: Ensures compatibility across various devices and screen sizes.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-This project is an excellent demonstration of building a frontend-only music player application using modern web development technologies and showcases best practices for state management, UI/UX design, and overall application architecture.
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+
+- Configure the top-level `parserOptions` property like this:
+
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
+
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list

@@ -1,0 +1,49 @@
+/* drawer.css */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.drawer {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #eeeeee;
+  overflow-x: hidden;
+  transition: width 0.5s ease, transform 0.5s ease;
+  transform: translateX(-100%);
+}
+
+.drawer.open {
+  width: 300px;
+  transform: translateX(0);
+}
+
+.drawer a:hover {
+  color: #f1f1f1;
+}
+
+.drawer .close-btn {
+  position: absolute;
+  top: 55px;
+  left: 25px;
+  font-size: 36px;
+  margin-right: 50px;
+}
+
+.pushed {
+  width: calc(100vw - 400px);
+  margin-left: 400px;
+  overflow-x: hidden;
+}
+
+.close-btn {
+  cursor: pointer;
+}
