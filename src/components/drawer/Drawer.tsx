@@ -7,9 +7,7 @@ const Drawer: FC<drawer.DrawerProps> = ({ open, onClose }) => {
   return (
     <>
       {open && <div className=""></div>}
-      <div className={`drawer ${open ? "open" : ""}`}>
-        <MusicLists />
-      </div>
+      <div className={`drawer ${open ? "open" : ""}`}></div>
     </>
   );
 };

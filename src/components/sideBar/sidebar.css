@@ -1,0 +1,21 @@
+.sidebar {
+  position: fixed;
+  top: 5%;
+  bottom: 0;
+  left: 0;
+  width: 17%;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.letter-spacing {
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.active-sidebar {
+  border-left: 3px solid green !important;
+  text-decoration: none;
+  font-weight: bolder;
+  color: green; /* Change text color to white */
+}

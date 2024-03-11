@@ -1,3 +1,8 @@
 .background-color {
   background-color: rgb(43, 43, 43);
 }
+
+.track-item:hover {
+  background-color: #333;
+  cursor: pointer;
+}

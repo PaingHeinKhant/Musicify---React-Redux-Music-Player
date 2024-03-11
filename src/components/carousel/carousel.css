@@ -1,0 +1,5 @@
+.car-sty {
+  height: 300px;
+  overflow: hidden;
+  z-index: 1;
+}
