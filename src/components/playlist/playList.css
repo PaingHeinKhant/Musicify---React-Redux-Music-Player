@@ -5,3 +5,41 @@
 .textDec {
   text-decoration: none !important;
 }
+
+.album {
+  position: relative;
+}
+
+.album__overlay {
+  position: absolute;
+  bottom: 23%;
+  right: 8%;
+  display: none;
+  color: white;
+  animation: slideRotate 0.5s ease forwards;
+}
+
+.album:hover .album__overlay {
+  display: flex;
+  /* animation: rotateOnHover 2s infinite ease forwards; */
+}
+
+@keyframes slideRotate {
+  from {
+    transform: translateY(100%) rotate(-100deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) rotate(100deg);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateOnHover {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

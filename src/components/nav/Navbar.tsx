@@ -1,11 +1,18 @@
-import React from "react";
+import { FunctionComponent } from "react";
 import { RiNeteaseCloudMusicFill } from "react-icons/ri";
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { FaBars } from "react-icons/fa";
 
-const Navbar = ({ toggleSidebar, sidebarVisible }) => {
+interface NavbarProps {
+  toggleSidebar: () => void;
+  sidebarVisible: boolean;
+}
+const Navbar: FunctionComponent<NavbarProps> = ({
+  toggleSidebar,
+  sidebarVisible,
+}) => {
   return (
-    <nav className="navbar z-2 navbar-light bg-black sticky-top top-0">
+    <nav className="navbar z-3 navbar-light bg-black sticky-top top-0">
       <div className="container-fluid">
         <div className="navbar-brand d-flex align-items-center ">
           <div

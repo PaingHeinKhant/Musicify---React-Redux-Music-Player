@@ -1,10 +1,14 @@
 import * as type from "../types";
 
-const initialState = {
+interface MusicState {
+  selectedSong: any;
+}
+
+const initialState: MusicState = {
   selectedSong: null,
 };
 
-const musicListReducer = (state = initialState, action: any) => {
+const musicListReducer = (state: MusicState = initialState, action: any) => {
   switch (action.type) {
     case type.CLICKED_SONG:
       return {

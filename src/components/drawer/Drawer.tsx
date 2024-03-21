@@ -1,9 +1,8 @@
-import React, { FC } from "react";
-import MusicLists from "../musicLists/MusicLists";
+import { FC } from "react";
 import "./drawer.css";
 import * as drawer from "../../interfaces/drawer";
 
-const Drawer: FC<drawer.DrawerProps> = ({ open, onClose }) => {
+const Drawer: FC<drawer.DrawerProps> = ({ open }) => {
   return (
     <>
       {open && <div className=""></div>}

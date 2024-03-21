@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { FaPauseCircle, FaPlayCircle } from "react-icons/fa";
 import { MdOutlineLyrics } from "react-icons/md";
-import { gsap } from "gsap";
 import { SlLoop } from "react-icons/sl";
 import {
   TbPlayerTrackPrevFilled,
@@ -19,20 +18,20 @@ import "./musicShow.css";
 import Navbar from "../nav/Navbar";
 import MusicLists from "../musicLists/MusicLists";
 import Lyrics from "../lyrics/Lyrics";
-import { log } from "console";
 
 const MusicShow = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
-  const [currentSong, setCurrentSong] = useState(null);
+  const [currentSong, setCurrentSong] = useState<musicShowInter.Song | null>(
+    null
+  );
   const [volume, setVolume] = useState(1);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isLooping, setIsLooping] = useState(false);
+  const [lyrics, setLyrics] = useState<musicShowInter.LyricData[]>([]);
 
   const currentSongs = useSelector(
-    (state: musicShowInter.SelectedSong) => state.musicList.selectedSong
+    (state: any) => state.musicList.selectedSong
   );
 
   useEffect(() => {
@@ -52,11 +51,13 @@ const MusicShow = () => {
   useEffect(() => {
     const updateLyrics = () => {
       const currentTime = audioRef.current.currentTime;
-      const currentLyrics = currentSong.lyricData.filter(
+      const currentLyrics = currentSong?.lyricData.filter(
         (lyric) => lyric.time < currentTime
       );
-      const last = currentLyrics.slice(-1);
-      setLyrics(last);
+      if (currentLyrics && currentLyrics.length > 0) {
+        const last = currentLyrics.slice(-1);
+        setLyrics(last);
+      }
     };
 
     // Check if audioRef and audioRef.current are not null
@@ -92,7 +93,7 @@ const MusicShow = () => {
     nextSongHandler();
   };
 
-  const formatTime = (time) => {
+  const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(
@@ -112,35 +113,39 @@ const MusicShow = () => {
     setIsPlaying(!isPlaying);
   };
 
-  const handleVolumeChange = (event) => {
+  const handleVolumeChange = (event: any) => {
     const newVolume = parseFloat(event.target.value);
     setVolume(newVolume);
   };
 
   const nextSongHandler = () => {
-    const index = tracks.findIndex((track) => track.id === currentSong.id);
-    const nextObject =
-      index > -1 && index < tracks.length - 1 ? tracks[index + 1] : null;
-    setCurrentSong(nextObject);
-  };
-
-  const prevSongHandler = () => {
-    const index = tracks.findIndex((track) => track.id === currentSong.id);
-    const prevObject =
-      index > -1 && index < tracks.length - 1 ? tracks[index - 1] : null;
-    setCurrentSong(prevObject);
-  };
-
-  const loopHandlerFn = () => {
-    if (isLooping) {
+    if (currentSong) {
       const index = tracks.findIndex((track) => track.id === currentSong.id);
-      const loopSong =
-        index > -1 && index < tracks.length - 1 ? tracks[index] : null;
-      setCurrentSong(loopSong);
+      const nextObject =
+        index > -1 && index < tracks.length - 1 ? tracks[index + 1] : null;
+      setCurrentSong(nextObject);
     }
   };
 
-  const handleSeek = (event) => {
+  const prevSongHandler = () => {
+    if (currentSong) {
+      const index = tracks.findIndex((track) => track.id === currentSong.id);
+      const prevObject =
+        index > -1 && index < tracks.length - 1 ? tracks[index - 1] : null;
+      setCurrentSong(prevObject);
+    }
+  };
+
+  // const loopHandlerFn = () => {
+  //   if (isLooping && currentSong) {
+  //     const index = tracks.findIndex((track) => track.id === currentSong.id);
+  //     const loopSong =
+  //       index > -1 && index < tracks.length - 1 ? tracks[index] : null;
+  //     setCurrentSong(loopSong);
+  //   }
+  // };
+
+  const handleSeek = (event: any) => {
     const newTime = parseFloat(event.target.value);
     setCurrentTime(newTime);
     audioRef.current.currentTime = newTime;
@@ -163,24 +168,13 @@ const MusicShow = () => {
     setIsVideoPlaying(!isVideoPlaying);
   };
 
-  const [lyrics, setLyrics] = useState([]);
-
   const [isVideoPlaying, setIsVideoPlaying] = useState(true);
 
   const [randomColor, setRandomColor] = useState("");
 
   useEffect(() => {
-    setRandomColor(getRandomColor());
+    setRandomColor("#ffc107");
   }, [isVideoPlaying]);
-
-  const getRandomColor = () => {
-    const letters = "0123456789ABCDEF";
-    let color = "#";
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  };
 
   return (
     <>
@@ -198,11 +192,7 @@ const MusicShow = () => {
               sidebarVisible ? "col-9" : "col-12 content"
             }`}
           >
-            <div
-              className={`p-0  background container-fluid ${
-                drawerOpen ? "pushed" : ""
-              }`}
-            >
+            <div>
               <div className="container p-0 d-flex">
                 <div>
                   {isVideoPlaying ? (
@@ -216,11 +206,12 @@ const MusicShow = () => {
                 </div>
                 <div className="row align-items-center justify-content-end w-100 min-vh-100 ">
                   <div className="col-1"></div>
-                  <div className="col-10 my-5">
+                  <div className="col-10 my-2">
+                    <div className="d-flex justify-content-center"></div>
                     <div className="text-center mb-3">
                       {isFlipped ? <Lyrics lyrics={lyrics} /> : ""}
                     </div>
-                    <div className="d-flex mt-5 align-items-center justify-content-around  ">
+                    <div className="d-flex align-items-center justify-content-around  ">
                       <div className="text-white my-4 ">
                         {currentSong ? (
                           <>
@@ -266,7 +257,7 @@ const MusicShow = () => {
                     <div className=" text-center">
                       <button onClick={toggleFlip} className="btn btn-link">
                         {isFlipped ? (
-                          <MdLyrics className="fs-2 mx-2 text-white " />
+                          <MdLyrics className="fs-2 mx-2  text-success " />
                         ) : (
                           <MdOutlineLyrics className="fs-2 mx-2 text-white " />
                         )}
@@ -283,9 +274,9 @@ const MusicShow = () => {
                         className="btn btn-link"
                       >
                         {isPlaying ? (
-                          <FaPauseCircle className="display-3 mx-2 text-white " />
+                          <FaPauseCircle className="display-2 mx-2 text-white " />
                         ) : (
-                          <FaPlayCircle className="display-3 mx-2 text-white " />
+                          <FaPlayCircle className="display-2 mx-2 text-white " />
                         )}
                       </button>
                       <button

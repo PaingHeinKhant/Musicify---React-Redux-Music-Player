@@ -1,6 +1,3 @@
-import React from "react";
-import Music from "../../assets/images/listen.png";
-
 const Login = () => {
   return (
     <div className="container-fluid bg-black min-vh-100 d-flex align-items-center justify-content-center">

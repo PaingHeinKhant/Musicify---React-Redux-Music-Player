@@ -1,5 +1,7 @@
 import { combineReducers } from "redux";
 import musicList from "./musicList";
-export default combineReducers({
+const rootReducer = combineReducers({
   musicList,
 });
+
+export default rootReducer;

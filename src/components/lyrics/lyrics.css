@@ -3,3 +3,7 @@
   text-decoration: underline;
   /* Add any other styles you want for highlighting */
 }
+
+.ly-hei {
+  height: 120px !important;
+}
