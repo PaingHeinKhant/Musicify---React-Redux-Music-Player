@@ -13,9 +13,24 @@
   cursor: pointer;
 }
 
-.active-sidebar {
+.cursor {
+  cursor: pointer;
+}
+
+.cursor:hover {
+  color: green;
+}
+
+.line-hide {
+  text-decoration: none;
+}
+
+.activeNavLink {
   border-left: 3px solid green !important;
   text-decoration: none;
   font-weight: bolder;
-  color: green; /* Change text color to white */
+}
+
+.activeNavLinkColor {
+  color: green;
 }

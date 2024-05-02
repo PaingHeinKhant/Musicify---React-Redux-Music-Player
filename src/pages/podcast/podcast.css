@@ -1,0 +1,56 @@
+.cursor-class {
+  cursor: pointer;
+}
+
+.textDec {
+  text-decoration: none !important;
+}
+
+.album_pod {
+  position: relative;
+}
+
+.album_pod::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 86%;
+  background-color: rgba(239, 159, 159, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.album_pod:hover::after {
+  opacity: 1;
+}
+
+.album_pod:hover .hover-color {
+  color: rgb(250, 91, 91);
+}
+
+.album__overlay_pod {
+  position: absolute;
+  bottom: 23%;
+  right: 8%;
+  display: none;
+  color: white;
+  animation: slideRotate 0.5s ease forwards;
+}
+
+.album_pod:hover .album__overlay_pod {
+  display: flex;
+  /* animation: rotateOnHover 2s infinite ease forwards; */
+}
+
+@keyframes slideRotate {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
