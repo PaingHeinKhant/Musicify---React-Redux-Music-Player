@@ -4,13 +4,22 @@
 body {
   font-family: "Rethink Sans", sans-serif;
 }
+.navbar-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.height-body {
+  margin-bottom: 80px;
+}
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 3px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: black;
 }
 
 /* Handle */
@@ -21,4 +30,4 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
-} 
+}

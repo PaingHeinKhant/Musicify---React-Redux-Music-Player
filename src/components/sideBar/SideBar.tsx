@@ -4,6 +4,8 @@ import { RiAlbumFill } from "react-icons/ri";
 import { LuMusic2 } from "react-icons/lu";
 import { IoPersonSharp } from "react-icons/io5";
 import { FaMicrophone } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa";
+import { IoMdSettings } from "react-icons/io";
 
 const SideBar = () => {
   const nowYear = new Date().getFullYear();
@@ -94,8 +96,51 @@ const SideBar = () => {
         </p>
       </NavLink>
 
-      <div className="ps-4 my-4 text-white-50 ">
-        <div className="position-absolute text-white-50 bottom-0 mb-5">
+      <NavLink
+        to="/podcasts"
+        className={`d-flex ps-2 my-3 ps-4 text-white-50 line-hide align-items-center ${
+          location.pathname === "/podcasts" ? "activeNavLink" : ""
+        }`}
+      >
+        {location.pathname === "/podcasts" ? (
+          <FaStar className="fs-4 activeNavLinkColor" />
+        ) : (
+          <FaStar className="fs-4 " />
+        )}
+        <p
+          className={`ms-2 m-0  letter-spacing ${
+            location.pathname === "/podcasts" ? "activeNavLinkColor" : ""
+          }`}
+        >
+          Favourite
+        </p>
+      </NavLink>
+
+      <hr />
+      <p className="text-white-50 small ps-4">Management</p>
+
+      <NavLink
+        to="/podcasts"
+        className={`d-flex ps-2 my-3 ps-4 text-white-50 line-hide align-items-center ${
+          location.pathname === "/podcasts" ? "activeNavLink" : ""
+        }`}
+      >
+        {location.pathname === "/podcasts" ? (
+          <IoMdSettings className="fs-4 activeNavLinkColor" />
+        ) : (
+          <IoMdSettings className="fs-4 " />
+        )}
+        <p
+          className={`ms-2 m-0  letter-spacing ${
+            location.pathname === "/podcasts" ? "activeNavLinkColor" : ""
+          }`}
+        >
+          Setting
+        </p>
+      </NavLink>
+
+      <div className="ps-4 text-white-50 ">
+        <div className="text-white-50 term-margin">
           <p className="cursor">Terms and Conditions</p>
           <p className="">
             {" "}

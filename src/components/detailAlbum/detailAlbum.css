@@ -1,0 +1,10 @@
+.width-frame-detail {
+  margin-left: 100px !important;
+  margin-right: 100px !important;
+}
+.bg-body-background {
+  background-color: #16151a !important;
+}
+.hover-effect:hover {
+  color: green;
+}

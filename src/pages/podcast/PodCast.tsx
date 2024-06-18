@@ -49,7 +49,7 @@ const podCast = () => {
   ];
   return (
     <div className="bg-body-background min-vh-100">
-      <div className="container p-4 text-white  ">
+      <div className="width-frame p-4 text-white  ">
         <div className="row">
           <div className="col-12 my-2 d-flex">
             <div className="breadcrumb-item text-white me-3">

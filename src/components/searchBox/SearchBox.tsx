@@ -3,16 +3,13 @@ import { FaSearch } from "react-icons/fa";
 
 const SearchBox = () => {
   return (
-    <form className="d-flex">
+    <form className="d-flex" role="search">
       <input
-        className="form-control me-2"
+        className="form-control me-2 custom-input"
         type="search"
-        placeholder="Search"
+        placeholder="Search songs, albums, artists, podcasts"
         aria-label="Search"
       />
-      <button className="btn btn-outline-success" type="submit">
-        <FaSearch />
-      </button>
     </form>
   );
 };

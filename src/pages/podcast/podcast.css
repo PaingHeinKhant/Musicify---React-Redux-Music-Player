@@ -44,6 +44,11 @@
   /* animation: rotateOnHover 2s infinite ease forwards; */
 }
 
+.width-frame {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
 @keyframes slideRotate {
   from {
     transform: translateY(100%);

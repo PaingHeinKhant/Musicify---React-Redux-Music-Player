@@ -6,6 +6,7 @@ import { RiLogoutCircleRFill } from "react-icons/ri";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { TiArrowSortedUp } from "react-icons/ti";
 import { useState } from "react";
+import SearchBox from "../searchBox/SearchBox";
 import "./navbar.css";
 
 interface NavbarProps {
@@ -35,19 +36,12 @@ const Navbar: FunctionComponent<NavbarProps> = ({
               <FaBars />
             </div>
             <div className="d-flex text-white align-items-center">
-              <RiNeteaseCloudMusicFill className="fs-1 me-1" />
+              {/* <RiNeteaseCloudMusicFill className="fs-1 me-1" /> */}
               <h3 className="text-uppercase m-0">Musicify</h3>
             </div>
           </div>
           <div className="col-6">
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2 custom-input"
-                type="search"
-                placeholder="Search songs, albums, artists, podcasts"
-                aria-label="Search"
-              />
-            </form>
+            <SearchBox />
           </div>
           <div className="col-3 d-flex justify-content-end align-items-center position-relative">
             <div

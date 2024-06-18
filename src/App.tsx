@@ -5,10 +5,12 @@ import SideBar from "./components/sideBar/SideBar";
 import Discover from "./pages/discover/Discover";
 import Login from "./pages/login/Login";
 import MusicShow from "./components/mainMusicShow/MusicShow";
+import DetailAlbum from "./components/detailAlbum/DetailAlbum";
 import "./App.css";
 import Release from "./pages/releases/Release";
 import Artists from "./pages/artists/Artists";
 import PodCast from "./pages/podcast/PodCast";
+import FooterBar from "./components/footerbar/FooterBar";
 
 const App = () => {
   const [sidebarVisible, setSidebarVisible] = useState(true);
@@ -34,7 +36,7 @@ const App = () => {
                   <SideBar />
                 </div>
                 <div
-                  className={`col-10 p-0 ${
+                  className={`height-body col-10 p-0 ${
                     sidebarVisible ? "col-10" : "col-12"
                   }`}
                 >
@@ -44,7 +46,30 @@ const App = () => {
             </div>
           }
         />
-        <Route path="/discover/:id" element={<MusicShow />} />
+        {/* <Route path="/discover/:id" element={<MusicShow />} /> */}
+        <Route
+          path="/discover/:id"
+          element={
+            <div className="container-fluid ">
+              <div className="row">
+                <Navbar
+                  toggleSidebar={toggleSidebar}
+                  sidebarVisible={sidebarVisible}
+                />
+                <div className={` col-2 p-0 ${sidebarVisible ? "" : "d-none"}`}>
+                  <SideBar />
+                </div>
+                <div
+                  className={` height-body col-10 p-0 ${
+                    sidebarVisible ? "col-10" : "col-12"
+                  }`}
+                >
+                  <DetailAlbum />
+                </div>
+              </div>
+            </div>
+          }
+        />
         <Route
           path="/releases"
           element={
@@ -58,7 +83,7 @@ const App = () => {
                   <SideBar />
                 </div>
                 <div
-                  className={`col-10 p-0 ${
+                  className={` height-body col-10 p-0 ${
                     sidebarVisible ? "col-10" : "col-12"
                   }`}
                 >
@@ -81,7 +106,7 @@ const App = () => {
                   <SideBar />
                 </div>
                 <div
-                  className={`col-10 p-0 ${
+                  className={`height-body col-10 p-0 ${
                     sidebarVisible ? "col-10" : "col-12"
                   }`}
                 >
@@ -104,7 +129,7 @@ const App = () => {
                   <SideBar />
                 </div>
                 <div
-                  className={`col-10 p-0 ${
+                  className={`height-body col-10 p-0 ${
                     sidebarVisible ? "col-10" : "col-12"
                   }`}
                 >
@@ -115,6 +140,10 @@ const App = () => {
           }
         />
       </Routes>
+
+      <div className="navbar-bottom">
+        <FooterBar />
+      </div>
     </>
   );
 };

@@ -46,7 +46,7 @@ const ChineseSongs = () => {
   return (
     <div className=" text-white">
       <div className="row">
-        <div className="col-12 p-4">
+        <div className="col-12 p-4 text-white">
           <div className="mb-4 d-flex justify-content-between align-items-center">
             {" "}
             <h1 className="">New Releases</h1>

@@ -10,37 +10,37 @@ const PlayList = () => {
       title: "Space Melody",
       artist: "VIZE",
       coverUrl:
-        "https://static.musictoday.com/store/bands/4225/product_600/XVCOMBO16.JPG",
+        "https://marketplace.canva.com/EAEqlr422aw/1/0/1600w/canva-falling-modern-aesthetic-music-album-cover-KsRCFSNg4XA.jpg",
     },
     {
       title: "Space Melody",
       artist: "VIZE",
       coverUrl:
-        "https://static.musictoday.com/store/bands/4225/product_600/XVCOMBO16.JPG",
+        "https://marketplace.canva.com/EAEqlr422aw/1/0/1600w/canva-falling-modern-aesthetic-music-album-cover-KsRCFSNg4XA.jpg",
     },
     {
       title: "Space Melody",
       artist: "VIZE",
       coverUrl:
-        "https://static.musictoday.com/store/bands/4225/product_600/XVCOMBO16.JPG",
+        "https://marketplace.canva.com/EAEqlr422aw/1/0/1600w/canva-falling-modern-aesthetic-music-album-cover-KsRCFSNg4XA.jpg",
     },
     {
       title: "Space Melody",
       artist: "VIZE",
       coverUrl:
-        "https://static.musictoday.com/store/bands/4225/product_600/XVCOMBO16.JPG",
+        "https://marketplace.canva.com/EAEqlr422aw/1/0/1600w/canva-falling-modern-aesthetic-music-album-cover-KsRCFSNg4XA.jpg",
     },
     {
       title: "Space Melody",
       artist: "VIZE",
       coverUrl:
-        "https://static.musictoday.com/store/bands/4225/product_600/XVCOMBO16.JPG",
+        "https://marketplace.canva.com/EAEqlr422aw/1/0/1600w/canva-falling-modern-aesthetic-music-album-cover-KsRCFSNg4XA.jpg",
     },
     {
       title: "Space Melody",
       artist: "VIZE",
       coverUrl:
-        "https://static.musictoday.com/store/bands/4225/product_600/XVCOMBO16.JPG",
+        "https://marketplace.canva.com/EAEqlr422aw/1/0/1600w/canva-falling-modern-aesthetic-music-album-cover-KsRCFSNg4XA.jpg",
     },
   ];
   return (
