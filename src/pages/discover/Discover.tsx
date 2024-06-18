@@ -7,11 +7,11 @@ import "./discover.css";
 const Discover = () => {
   return (
     <div className="bg-body-background">
-      <div className="">
+      <Carousel />
+      <div className="width-frame">
         {/* <div className="alert alert-warning m-0 text-center" role="alert">
           This application is presently undergoing development. ⚠️
         </div> */}
-        <Carousel />
         <ChineseSongs />
         <PlayList />
         <InterSongs />
