@@ -1,0 +1,74 @@
+.width-frame {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.bg-body-background {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 100%;
+  overflow: hidden;
+  margin-bottom: 200px;
+}
+
+.table-play {
+  min-height: 60vh;
+}
+
+/* playmusic.css */
+.nav-link {
+  position: relative;
+  color: white;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: green;
+}
+
+.nav-link.active {
+  color: green;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 3px;
+  background-color: white;
+}
+.music-data-container {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 10px;
+}
+
+.margin-top {
+  margin-top: 15% !important;
+}
+
+/* For medium screens and up */
+@media (min-width: 768px) {
+  .music-data-container {
+    max-height: 500px;
+  }
+}
+
+/* For large screens and up */
+@media (min-width: 992px) {
+  .music-data-container {
+    max-height: 600px;
+  }
+}
+
+/* For extra large screens and up */
+@media (min-width: 1200px) {
+  .music-data-container {
+    max-height: 700px;
+  }
+}

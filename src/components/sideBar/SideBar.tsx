@@ -11,7 +11,7 @@ const SideBar = () => {
   const nowYear = new Date().getFullYear();
 
   return (
-    <div className="sidebar z-2 bg-black text-white min-vh-100">
+    <div className="sidebar z-2 bg-black text-white min-vh-100 sidebar-container">
       <div className="mb-4 mt-5">
         <NavLink
           to="/discover"

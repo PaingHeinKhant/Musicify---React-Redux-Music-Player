@@ -92,11 +92,7 @@ const podCast = () => {
                     >
                       <div className="album-link text-decoration-none text-white">
                         <div className="album_pod position-relative">
-                          <img
-                            src={album.coverUrl}
-                            className="w-100 rounded-3"
-                            alt=""
-                          />
+                          <img src={album.coverUrl} className="w-100" alt="" />
 
                           <div className="album__text-layer position-absolute top-0 m-3 start-0  d-flex">
                             <span className="badge bg-danger">LIVE •</span>

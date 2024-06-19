@@ -11,6 +11,7 @@ import Release from "./pages/releases/Release";
 import Artists from "./pages/artists/Artists";
 import PodCast from "./pages/podcast/PodCast";
 import FooterBar from "./components/footerbar/FooterBar";
+import PlayMusic from "./components/playmusic/PlayMusic";
 
 const App = () => {
   const [sidebarVisible, setSidebarVisible] = useState(true);
@@ -65,6 +66,30 @@ const App = () => {
                   }`}
                 >
                   <DetailAlbum />
+                </div>
+              </div>
+            </div>
+          }
+        />
+
+        <Route
+          path="/discover/:id/:id"
+          element={
+            <div className="container-fluid ">
+              <div className="row">
+                <Navbar
+                  toggleSidebar={toggleSidebar}
+                  sidebarVisible={sidebarVisible}
+                />
+                <div className={` col-2 p-0 ${sidebarVisible ? "" : "d-none"}`}>
+                  <SideBar />
+                </div>
+                <div
+                  className={`min-vh-100 col-10 p-0 ${
+                    sidebarVisible ? "col-10" : "col-12"
+                  }`}
+                >
+                  <PlayMusic />
                 </div>
               </div>
             </div>

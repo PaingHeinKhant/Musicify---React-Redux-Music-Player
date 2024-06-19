@@ -59,11 +59,7 @@ const InterSongs = () => {
                 className="col-6 mb-4 cursor-class d-inline-block col-sm-4 col-lg-2"
               >
                 <div className="album ">
-                  <img
-                    src={album.coverUrl}
-                    className="w-100 rounded-3"
-                    alt=""
-                  />
+                  <img src={album.coverUrl} className="w-100" alt="" />
                   <div className="album__title">
                     <p className=" m-0 custom-font">{album.title}</p>
                     <p className="small m-0 custom-font">{album.artist}</p>

@@ -25,7 +25,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
   };
 
   return (
-    <nav className="navbar z-3 navbar-light bg-black sticky-top top-0">
+    <nav className="navbar z-3 navbar-light navbar-full-height bg-black sticky top-0">
       <div className="container-fluid">
         <div className="row w-100 align-items-center">
           <div className="col-3 d-flex align-items-center">

@@ -39,3 +39,7 @@
 .activeNavLinkColor {
   color: green;
 }
+
+.sidebar-container {
+  flex: 1;
+}

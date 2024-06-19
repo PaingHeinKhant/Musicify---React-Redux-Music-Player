@@ -26,3 +26,8 @@
   outline: none !important;
   box-shadow: none !important;
 }
+
+.navbar-full-height {
+  position: sticky !important;
+  top: 0;
+}

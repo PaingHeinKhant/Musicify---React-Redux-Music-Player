@@ -157,14 +157,16 @@ const DetailAlbum = () => {
                 <MdOutlinePlaylistAdd className="me-1" />
                 Add to playList
               </button>
+              <FaShare className="play-icon fs-4 ms-3 hover-effect" />
             </div>
           </div>
         </div>
 
         {MusicData.map((music, index) => (
           <div className="">
-            <div
-              className="row d-flex align-items-center"
+            <Link
+              to={`/discover/${index}/${index}`}
+              className="row d-flex align-items-center text-decoration-none text-white"
               key={index}
               onMouseEnter={() => setHoverIndex(index)}
               onMouseLeave={() => setHoverIndex(null)}
@@ -189,7 +191,6 @@ const DetailAlbum = () => {
               <div className="col-3 d-flex justify-content-end">
                 {hoverIndex === index ? (
                   <>
-                    <FaShare className="play-icon fs-4 me-3 hover-effect" />
                     <IoIosAddCircle className="play-icon fs-4 me-3 hover-effect" />
                     <FaStar className="play-icon fs-4 me-5 hover-effect" />
                   </>
@@ -199,7 +200,7 @@ const DetailAlbum = () => {
 
                 <p className="m-0 text-white-50">{music.time}</p>
               </div>
-            </div>
+            </Link>
             {index !== MusicData.length - 1 && <hr />}
           </div>
         ))}
