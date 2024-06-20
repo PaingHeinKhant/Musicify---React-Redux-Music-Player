@@ -12,6 +12,7 @@ import Artists from "./pages/artists/Artists";
 import PodCast from "./pages/podcast/PodCast";
 import FooterBar from "./components/footerbar/FooterBar";
 import PlayMusic from "./components/playmusic/PlayMusic";
+import Favourite from "./pages/favourite/Favourite";
 
 const App = () => {
   const [sidebarVisible, setSidebarVisible] = useState(true);
@@ -159,6 +160,30 @@ const App = () => {
                   }`}
                 >
                   <PodCast />
+                </div>
+              </div>
+            </div>
+          }
+        />
+
+        <Route
+          path="/favourite"
+          element={
+            <div className="container-fluid ">
+              <div className="row">
+                <Navbar
+                  toggleSidebar={toggleSidebar}
+                  sidebarVisible={sidebarVisible}
+                />
+                <div className={` col-2 p-0 ${sidebarVisible ? "" : "d-none"}`}>
+                  <SideBar />
+                </div>
+                <div
+                  className={`height-body col-10 p-0 ${
+                    sidebarVisible ? "col-10" : "col-12"
+                  }`}
+                >
+                  <Favourite />
                 </div>
               </div>
             </div>

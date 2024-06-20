@@ -97,12 +97,11 @@ const Artists = () => {
           </div>
           <div className="col-12 my-3">
             <div className="row">
-              <div className="col-12 d-flex justify-content-between mt-4">
+              <div className="col-12 d-flex justify-content-between mt-1">
                 <div className="d-flex align-items-center">
-                  <FaGuitar className="display-3 me-2 text-success" />
-                  <h1 className="letter-spacing ">Artists</h1>
+                  <FaGuitar className="display-6 me-2 text-success" />
+                  <h3 className="letter-spacing m-0">Artists</h3>
                 </div>{" "}
-                {/* <SearchBox /> */}
               </div>
             </div>
           </div>

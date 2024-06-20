@@ -49,7 +49,7 @@ const PlayList = () => {
         <div className="col-12 p-4">
           <div className="mb-4 d-flex justify-content-between align-items-center">
             {" "}
-            <h1 className="">Recommended albums</h1>
+            <h3 className="">Recommended albums</h3>
             <p className="m-0">
               See More <MdArrowRight className="fs-2" />
             </p>

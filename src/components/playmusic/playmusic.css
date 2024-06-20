@@ -69,6 +69,6 @@
 /* For extra large screens and up */
 @media (min-width: 1200px) {
   .music-data-container {
-    max-height: 700px;
+    max-height: 500px;
   }
 }

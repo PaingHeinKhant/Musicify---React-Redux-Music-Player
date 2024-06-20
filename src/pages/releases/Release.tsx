@@ -110,10 +110,10 @@ const Release = () => {
           </div>
           <div className="col-12 my-3">
             <div className="row">
-              <div className="col-12 d-flex justify-content-between mt-4">
+              <div className="col-12 d-flex justify-content-between mt-2">
                 <div className="d-flex align-items-center">
-                  <IoMdMusicalNote className="display-1 text-success" />
-                  <h1 className="letter-spacing ">Releases</h1>
+                  <IoMdMusicalNote className="display-6 text-success" />
+                  <h3 className="letter-spacing m-0">Releases</h3>
                 </div>
                 {/* <SearchBox /> */}
               </div>

@@ -49,7 +49,7 @@ const ChineseSongs = () => {
         <div className="col-12 p-4 text-white">
           <div className="mb-4 d-flex justify-content-between align-items-center">
             {" "}
-            <h1 className="">New Releases</h1>
+            <h3 className="">New Releases</h3>
             <p className="m-0">
               See More <MdArrowRight className="fs-2" />
             </p>

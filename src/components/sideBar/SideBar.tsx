@@ -97,19 +97,19 @@ const SideBar = () => {
       </NavLink>
 
       <NavLink
-        to="/podcasts"
+        to="/favourite"
         className={`d-flex ps-2 my-3 ps-4 text-white-50 line-hide align-items-center ${
-          location.pathname === "/podcasts" ? "activeNavLink" : ""
+          location.pathname === "/favourite" ? "activeNavLink" : ""
         }`}
       >
-        {location.pathname === "/podcasts" ? (
+        {location.pathname === "/favourite" ? (
           <FaStar className="fs-4 activeNavLinkColor" />
         ) : (
           <FaStar className="fs-4 " />
         )}
         <p
           className={`ms-2 m-0  letter-spacing ${
-            location.pathname === "/podcasts" ? "activeNavLinkColor" : ""
+            location.pathname === "/favourite" ? "activeNavLinkColor" : ""
           }`}
         >
           Favourite

@@ -67,10 +67,10 @@ const podCast = () => {
           </div>
           <div className="col-12 my-3">
             <div className="row">
-              <div className="col-12 d-flex justify-content-between mt-4">
+              <div className="col-12 d-flex justify-content-between mt-2">
                 <div className="d-flex align-items-center">
-                  <FaMicrophone className="display-1 text-success" />
-                  <h1 className="letter-spacing ">Podcasts</h1>
+                  <FaMicrophone className="display-6 text-success" />
+                  <h3 className="letter-spacing m-0 ms-1">Podcasts</h3>
                 </div>
                 {/* <SearchBox /> */}
               </div>

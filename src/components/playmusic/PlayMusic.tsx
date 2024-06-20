@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import demo from "../../assets/videos/demo.mp4";
 import "./playmusic.css";
+import Lyrics from "../lyrics/Lyrics";
 
 const PlayMusic = () => {
   const [activeTab, setActiveTab] = useState("up-next");
@@ -199,10 +200,7 @@ const PlayMusic = () => {
                 >
                   <div className="music-data-container">
                     {MusicData.map((music, index) => (
-                      <div
-                        className="container-fluid text-white mx-4"
-                        key={index}
-                      >
+                      <div className="container-fluid text-white" key={index}>
                         <div className="row d-flex align-items-center">
                           <div className="col-8">
                             <div className="d-flex align-items-center mt-3">
@@ -234,11 +232,7 @@ const PlayMusic = () => {
                   role="tabpanel"
                   aria-labelledby="lyrics-tab"
                 >
-                  {/* Content for LYRICS tab */}
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et
-                  eius recusandae reprehenderit quae accusamus, quidem totam
-                  ullam nemo consequatur sit debitis error perspiciatis aut
-                  excepturi non veniam soluta incidunt numquam.
+                  {/* <Lyrics /> */}
                 </div>
                 <div
                   className={`tab-pane fade ${
@@ -248,11 +242,31 @@ const PlayMusic = () => {
                   role="tabpanel"
                   aria-labelledby="pills-related-tab"
                 >
-                  {/* Content for RELATED tab */}
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum
-                  itaque nulla commodi totam pariatur odit libero voluptate,
-                  tempore cum quo debitis alias voluptates porro, facere
-                  exercitationem? Eius deserunt animi ex!
+                  <div className="music-data-container">
+                    {MusicData.map((music, index) => (
+                      <div className="container-fluid text-white" key={index}>
+                        <div className="row d-flex align-items-center">
+                          <div className="col-8">
+                            <div className="d-flex align-items-center mt-3">
+                              <img
+                                width={40}
+                                height={40}
+                                src={music.coverUrl}
+                                alt=""
+                              />
+                              <div className="ms-3">
+                                <p className="m-0">{music.title}</p>
+                                <p className="m-0">{music.artist}</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="col-4 d-flex justify-content-end">
+                            <p className="m-0">{music.time}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
